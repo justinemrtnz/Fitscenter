@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width-device-width,initial-scale=1.0, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap-4.3.1-dist/css/carousel.css" >
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css"></script>
+
+<title>{% block title %}{% endblock %}</title>
+<script src="sweetalert2.all.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<link rel="stylesheet" href="sweetalert2.min.css">
+</head>
+<body>
+<style>
+		html
+{ height: 100%;}
+
+body {
+	background-color: #f0f0f5;
+}
+
+*{
+	box-sizing: border-box;
+}
+
+th {
+	background-color: #4d4d4d;
+	color: #ffffff;
+}
+tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+td, th {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
+}
+
+.btnlogout{
+  background-color: #ff9900;
+  color: white;
+  margin-top: 4px;
+}
+
+.btnlogout:hover{
+  background-color: white;
+  color: #ff9900;
+}
+
+a.link:active {
+color:red;
+  font-weight:bold;
+}
+
+li a:hover{
+  color:#4d4d4d;
+  font-weight:bold;
+}
+
+.btn-link{
+  position: absolute;
+  top: 3px;
+  right: 25px;
+  font-size: 23px;
+}
+
+.imgright{
+  position: absolute;
+  top: 5px;
+  right: 120px;
+  width: 40px;
+  height: 40px;
+}
+
+
+
+.link{
+  color:#ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size:16px;
+}
+
+.nav-item{
+  float:left;
+  display:inline;
+  padding: 0 10px 0 10px;
+}
+
+ul{
+  margin:0;
+  padding:0;
+}
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 11px 13px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: #f2f2f2;
+  color:#4d4d4d;
+  font-weight:bold;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 170px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.navbar a:hover {
+  background-color: #333333;
+  display: block;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+</style>
+<div class="base sticky" style="margin-top: 9%">
+<!-- Navigation -->
+	<nav class="navbar navbar-expand-sm" style="background-color: #333333;">
+    <a href="{{url_for('home')}}" style="text-decoration: none;">
+    </a>
+    <!--<h5 style="color: #ff9900; font-family: 'Courier New', monospace;"> Inventory<br>
+    Management</h5>-->
+
+
+<!--Navlinks-->
+	<ul class="nav nav-pills">
+    <li class = nav-item>
+		  <a class="nav-link link" href="{{url_for('home')}}">Home</a>
+    </li>
+        <li class = nav-item>
+		  <a class="nav-link link" href="#">About</a>
+    </li>
+    <li class = nav-item>
+      <a class="nav-link link" href="#" onclick="clickEvent();">News</a>
+    </li>
+        <li class = nav-item>
+      <a class="nav-link link" href="{{url_for('agriculturist')}}">OMA Personnel</a>
+    </li>
+        <li class = nav-item>
+      <a class="nav-link link" href="{{url_for('farmers')}}">Registered Farmers Organization</a>
+    </li>
+         <li class = nav-item>
+      <a class="nav-link link" href="#" onclick="clickEvent();">Upload News</a>
+    </li>
+
+
+
+
+
+
+  </ul>
+
+<!--logout-->
+
+
+</nav>
+
+        {% block content %} {% endblock %}
+</div>
+<script type="text/javascript">
+    function clickEvent(){
+        Swal.fire({
+  title: 'Login Form',
+  html: `<input type="text" id="login" class="swal2-input" placeholder="Username">
+  <input type="password" id="password" class="swal2-input" placeholder="Password">`,
+  confirmButtonText: 'Sign in',
+  focusConfirm: false,
+  preConfirm: () => {
+    const login = Swal.getPopup().querySelector('#login').value
+    const password = Swal.getPopup().querySelector('#password').value
+    if (!login || !password) {
+      Swal.showValidationMessage(`Please enter login and password`)
+    }else if (login == "admin" || password == "admin123"){
+        Swal.fire({
+  title: "Welcome!",
+  text: "Welcome Admin",
+        customClass: 'swal-wide',
+  icon: "success",
+         confirmButtonColor: "#3b83dc",
+confirmButtonText: '<a href="{{url_for('upnews')}}">Continue</a>'});
+    }else if(login != "admin" || password != "admin123"){
+        Swal.fire({
+  title: "Failed!",
+  text: "Wrong Username or Password",
+        customClass: 'swal-wide',
+  icon: "error",
+         confirmButtonColor: "#3b83dc",
+   confirmButtonText: "Continue!",
+});
+    }
+  }
+})
+    }
+
+</script>
+</body>
+</html>

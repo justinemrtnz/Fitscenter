@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% block title %} Create a New Post {% endblock %}</h1>
+
+<form method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="caption">Title</label>
+
+        <input type="caption" name="caption"
+               placeholder="Post title" class="form-control"
+               value="{{ request.form['caption'] }}"/>
+    </div>
+
+    <div class="form-group">
+        <label for="upload_img">Content</label>
+         <input type="file" class="form-control" name="upload_img" >
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+{% endblock %}
