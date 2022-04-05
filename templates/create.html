@@ -1,8 +1,129 @@
+<html lang="en">
+<head>
+  <title>FITS Center</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+
+<body>
+
+
+<div class="header" id="myHeader" style="margin-top: -2%">
+<center> <h2 style="margin-left: -9%; font-weight:120" > <img src="{{url_for('static', filename='nagcarlan.png')}}" class="icon" width="-10" height="-10" style="height: 100px; width: 200px"> MUNICIPAL AGRICULTURE OFFICE<img src="{{url_for('static', filename='agri.png')}}" class="icon" width="-10" height="-10" style="height: 110px; width: 110px; margin-left: 4%"><p style="margin-top: -30px; margin-bottom: -2%">NAGCARLAN, LAGUNA</p></h2><br>
+</center>
+</div>
+<div style="margin-top: -9%">
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>{% block title %} Create a New Post {% endblock %}</h1>
+    </div>
+    <style>
 
+.table-container thead tr{
+    background-color: #42adf5;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+.table-container {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+.table-container {
+    margin-top: 2%;
+    background-color: white;
+    font-size: 1.2vw;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    backgroud-color: white;
+    padding: 20px 20px 10px 20px;
+}
+.table-container:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.scrollit {
+    overflow:scroll;
+    height:100px;
+}
+.table-container {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.table-container:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+td, th {
+
+        text-align: left;
+        padding: 6px;
+        font-size: 1.2vw;
+
+    }
+body{
+    background: white;
+}
+.container {
+  position: relative;
+  text-align: center;
+}
+.centered1 {
+  position: absolute;
+
+  top: 200px;
+  left: 143px;
+  font-size: 20px
+}
+.centered2 {
+   position: absolute;
+  top: 200px;
+  right: 130px;
+   font-size: 20px
+}
+img.one {
+  height: 100%;
+  width: 100%;
+}
+
+img.two {
+  height: 50%;
+  width: 50%;
+}
+.top-container {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+}
+
+.header {
+  padding: 10px 16px;
+  background: white;
+  color: black;
+}
+
+.content {
+  padding: 16px;
+}
+</style>
+<div class="container">
+<!--flash-->
+	{% for message in get_flashed_messages() %}
+        <div class="alert alert-success alert-dismissible" role="alert" style="min-height: 100%; width:80%">
+  {{message}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">X</span>
+  </button>
+</div>
+    {% endfor %}
+</div>
+    <div style="margin-left:3%; margin-right:3%; width: 94%" class ="table-container" id="table-container">
 <form method="post" enctype="multipart/form-data">
     <div class="form-group">
         <label for="caption">Title</label>
@@ -20,4 +141,9 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </div>
 </form>
-{% endblock %}
+    </div>
+
+    	{% endblock %}
+</div>
+
+</body>
