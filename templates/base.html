@@ -173,7 +173,7 @@ ul{
 		  <a class="nav-link link" href="#">About</a>
     </li>
     <li class = nav-item>
-      <a class="nav-link link" href="#" onclick="clickEvent();">News</a>
+      <a class="nav-link link" href="{{url_for('view')}}">News</a>
     </li>
         <li class = nav-item>
       <a class="nav-link link" href="{{url_for('agriculturist')}}">OMA Personnel</a>
@@ -183,6 +183,9 @@ ul{
     </li>
          <li class = nav-item>
       <a class="nav-link link" href="#" onclick="clickEvent();">Upload News</a>
+    </li>
+            <li class = nav-item>
+      <a class="nav-link link" href="{{url_for('pdf')}}">Downloadable Materials</a>
     </li>
 
 
