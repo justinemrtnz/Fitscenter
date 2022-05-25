@@ -1,0 +1,14 @@
+
+DROP TABLE IF EXISTS posts;
+
+CREATE TABLE posts (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	lname TEXT NOT NULL,
+	fname TEXT NOT NULL,
+	mname TEXT NOT NULL,
+	address TEXT NOT NULL,
+	crop TEXT NOT NULL,
+	area TEXT NOT NULL,
+	livestock TEXT NOT NULL,
+	noheads TEXT NOT NULL
+);

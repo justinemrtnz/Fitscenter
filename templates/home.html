@@ -1,0 +1,541 @@
+<html lang="en">
+<head>
+  <title>Nagcarlan Municipal Agriculture Office</title>
+    <link rel = "icon" href ="/static/agri.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+
+<body>
+
+
+<div class="header" id="myHeader" style="margin-top: -2%; margin-bottom: 1%; background-image: linear-gradient(#6AA121, #BCE954, #387C44);">
+<center> <h2 style="margin-left: -3%; font-weight: bold" > <img src="/static/nagcarlan.png" class="icon" width="-10" height="-10" style="height: 100px; width: 200px"> MUNICIPAL AGRICULTURE OFFICE<img src="/static/agri.png" class="icon" width="10" height="10" style="height: 110px; width: 110px; margin-left: 4%"><p style="margin-top: -30px; margin-bottom: -2%">NAGCARLAN, LAGUNA</p></h2><br>
+</center>
+</div>
+
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width-device-width,initial-scale=1.0, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap-4.3.1-dist/css/carousel.css" >
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css"></script>
+
+<title></title>
+<script src="sweetalert2.all.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<link rel="stylesheet" href="sweetalert2.min.css">
+</head>
+<body>
+<style>
+    html
+{ height: 100%;}
+
+body {
+  background-color: #f0f0f5;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+th {
+  background-color: #4d4d4d;
+  color: #ffffff;
+}
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.btnlogout{
+  background-color: #ff9900;
+  color: white;
+  margin-top: 4px;
+}
+
+.btnlogout:hover{
+  background-color: white;
+  color: #ff9900;
+}
+
+a.link:active {
+color:red;
+  font-weight:bold;
+}
+
+li a:hover{
+  color:#4d4d4d;
+  font-weight:bold;
+}
+
+.btn-link{
+  position: absolute;
+  top: 3px;
+  right: 25px;
+  font-size: 23px;
+}
+
+.imgright{
+  position: absolute;
+  top: 5px;
+  right: 120px;
+  width: 40px;
+  height: 40px;
+}
+
+
+
+.link{
+  color:#ffffff;
+  text-decoration: none;
+  font-size:17px;
+}
+
+.nav-item{
+  float:left;
+  display:inline;
+  padding: 0 10px 0 10px;
+}
+
+ul{
+  margin:0;
+  padding:0;
+}
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 11px 13px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: #f2f2f2;
+  color:#4d4d4d;
+  font-weight:bold;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 170px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.navbar a:hover {
+  background-color: #333333;
+  display: block;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+</style>
+<div class="base sticky" style="margin-top: -1%">
+<!-- Navigation -->
+  <nav class="navbar navbar-expand-sm" style="background-color: #333333;">
+    <a href="/home" style="text-decoration: none;">
+    </a>
+    <!--<h5 style="color: #ff9900; font-family: 'Courier New', monospace;"> Inventory<br>
+    Management</h5>-->
+
+
+<!--Navlinks-->
+  <ul class="nav nav-pills">
+    <li class = nav-item>
+      <a class="nav-link link" href="/home">Home</a>
+    </li>
+        <li class = nav-item>
+      <a class="nav-link link" href="/about">About</a>
+    </li>
+    <li class = nav-item>
+      <a class="nav-link link" href="/news">News</a>
+    </li>
+        <li class = nav-item>
+      <a class="nav-link link" href="/agriculturist">OMA Personnel</a>
+    </li>
+        <li class="nav-item dropdown">
+      <a class="nav-link link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Farmers</a>
+        <div class="dropdown-content">
+
+          <a href="/farmers">Registered Farmers Organization</a>
+                      <a href="#">Registered Farmers </a>
+        </div>
+    </li>
+            <li class="nav-item dropdown">
+      <a class="nav-link link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Agricultural Statistics</a>
+        <div class="dropdown-content">
+
+          <a href="/pricemonitoring">Agricultural Product Price Monitoring</a>
+                      <a href="/landarea">Agricultural Land Area</a>
+
+
+
+
+
+
+
+
+        </div>
+    </li>
+          <li class="nav-item dropdown">
+      <a class="nav-link link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Downloadable Reading Materials</a>
+        <div class="dropdown-content">
+          <a href="/organic-agriculture">Organic Agriculture</a>
+          <a href="/avian-influenza">Avian Influenza</a>
+            <a href="/hog-production">Hog Production</a>
+            <a href="/palay">Gabay sa Makabagong Pagpapalay</a>
+            <a href="/urbangardening">Urban Gardening</a>
+            <a href="/pdf5">Fish Amino Acid</a>
+            <a href="/pdf6">Pagbabago sa Klima</a>
+            <a href="/pdf7">Oyster Mushroom Production Guide</a>
+            <a href="/pdf8">El Niño at La Niña</a>
+            <a href="/pdf9">Likas na Kaaway ng Corn Borer</a>
+            <a href="/pdf10">African-Night-Crawler</a>
+            <a href="/pdf11">Pesteng Insekto at Sakit Labanan</a>
+            <a href="/pdf12">Antimicrobial Resistance</a>
+            <a href="/pdf13">Foot and Mouth Decease</a>
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </li>
+
+  </ul>
+
+<!--logout-->
+
+
+</nav>
+
+        
+    <style>
+body{
+background-image: url(/static/bg3.jpg);
+    background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+
+
+.top-container {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+}
+
+.header {
+  padding: 10px 16px;
+  background: white;
+  color: black;
+}
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 102px;
+}
+
+.header {
+  padding: 10px 16px;
+  background: white;
+  color: black;
+}
+.carousel-inner img{
+  width: 100%;
+  height: 800px;
+  border-radius: 20px;
+}
+
+#myCarousel {
+    float: left;
+    display: inline;
+    width: 40%;
+}
+
+#mycollapse {
+    width: 55%;
+    float: right;
+    display: inline;
+}
+
+.icon{
+  height: 30px;
+  width: 30px;
+}
+.icon-add{
+  height: 40px;
+  width: 30px;
+}
+.icon-socmed{
+  height:20px;
+  width: 20px;
+}
+
+.icon-dev{
+  height:30px;
+  width: 30px;
+}
+
+.panel-heading{
+background-color: rgb(40, 41, 35);
+}
+.panel-title{
+  color: white;
+}
+
+.panel-body {
+  background-color:#ddd;
+}
+
+a:hover{
+  color: #ff9900;
+  text-decoration: none;
+}
+
+</style>
+<div class="container">
+<!--flash-->
+  
+</div>
+
+<div class="container">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin-top: 2%">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+      <li data-target="#myCarousel" data-slide-to="4"></li>
+        <li data-target="#myCarousel" data-slide-to="5"></li>
+           <li data-target="#myCarousel" data-slide-to="6"></li>
+                   <li data-target="#myCarousel" data-slide-to="7"></li>
+                   <li data-target="#myCarousel" data-slide-to="8"></li>
+                           <li data-target="#myCarousel" data-slide-to="9"></li>
+
+                           <li data-target="#myCarousel" data-slide-to="10"></li>
+
+                           <li data-target="#myCarousel" data-slide-to="11"></li>
+
+                           <li data-target="#myCarousel" data-slide-to="12"></li>
+
+                           <li data-target="#myCarousel" data-slide-to="13"></li>
+
+                           <li data-target="#myCarousel" data-slide-to="14"></li>
+
+                           <li data-target="#myCarousel" data-slide-to="15"></li>
+
+                           <li data-target="#myCarousel" data-slide-to="16"></li>
+
+                           <li data-target="#myCarousel" data-slide-to="17"></li>
+
+
+
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="/static/home/act.png" alt="2nd">
+      </div>
+
+      <div class="item">
+        <img src="/static/home/act2.png" alt="3rd">
+      </div>
+
+      <div class="item">
+        <img src="/static/home/act3.png" alt="4th">
+      </div>
+      <div class="item">
+        <img src="/static/home/act4.png" alt="5th">
+      </div>
+         <div class="item">
+        <img src="/static/home/act7.png" alt="6th">
+      </div>
+        <div class="item">
+        <img src="/static/home/act5.png" alt="7th">
+      </div>
+         <div class="item">
+        <img src="/static/home/act6.png" alt="8th">
+      </div>
+          <div class="item">
+        <img src="/static/home/act7.png" alt="9th">
+      </div>
+        <div class="item">
+        <img src="/static/home/act8.png" alt="10th">
+      </div>
+        <div class="item">
+        <img src="/static/home/act9.png" alt="11th">
+      </div>
+        <div class="item">
+        <img src="/static/home/act10.png" alt="12th">
+      </div>
+        <div class="item">
+        <img src="/static/home/act11.png" alt="13th">
+      </div>
+         <div class="item">
+        <img src="/static/home/act12.png" alt="14th">
+      </div>
+         <div class="item">
+        <img src="/static/home/act13.png" alt="15th">
+      </div>
+         <div class="item">
+        <img src="/static/nagcarlan.png" alt="16th">
+      </div>
+          <div class="item">
+        <img src="/static/agri.png" alt="17th">
+      </div>
+
+
+
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+
+<br>
+<br>
+<div id="mycollapse" style="margin-top: -3.6%">
+  <b><h2>About Us</h2></b>
+  <div class="panel-group" id="accordion">
+   <div class="panel">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Contact Details</a>
+        </h3>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse">
+        <div class="panel-body">
+        <h5>
+          <img class="icon-add" src="/static/images/mail.png"> municipal.agri nagcarlan@yahoo.com.ph </p>
+                      <img class="icon-add" src="/static/images/telephone.png"> (049) 5632164 </p>
+
+        </h5>
+        </div>
+      </div>
+    </div>
+          <div class="panel">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Address</a>
+        </h3>
+      </div>
+      <div id="collapse2" class="panel-collapse collapse">
+        <div class="panel-body">
+        <h5>
+          <img class="icon-dev" src="/static/images/loca.png">   Rizal Avenue Poblacion 2 Nagcarlan, Laguna </p>
+        </h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+
+        <h3 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">Social Media Account</a>
+        </h3>
+
+      </div>
+      <div id="collapse4" class="panel-collapse collapse">
+        <div class="panel-body">
+          <h5>
+          <img class="icon-add" src="/static/images/faceb.png"> https://www.facebook.com/fits.nagcarlan.7 </p>
+
+        </h5>
+        </div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">Developer</a>
+        </h3>
+      </div>
+      <div id="collapse5" class="panel-collapse collapse">
+        <div class="panel-body">
+          <h5 >
+            <img class="icon-dev" src="/static/images/j.png"> Justine U. Martinez<br>
+
+
+        </h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+      
+</div>
+</body>
+</html>

@@ -1,0 +1,653 @@
+<html lang="en">
+<head>
+  <title>Nagcarlan Municipal Agriculture Office</title>
+    <link rel = "icon" href ="/static/agri.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+
+<body>
+
+
+<div class="header" id="myHeader" style="margin-top: -2%; margin-bottom: 1%; background-image: linear-gradient(#6AA121, #BCE954, #387C44);">
+<center> <h2 style="margin-left: -3%; font-weight: bold" > <img src="/static/nagcarlan.png" class="icon" width="-10" height="-10" style="height: 100px; width: 200px"> MUNICIPAL AGRICULTURE OFFICE<img src="/static/agri.png" class="icon" width="10" height="10" style="height: 110px; width: 110px; margin-left: 4%"><p style="margin-top: -30px; margin-bottom: -2%">NAGCARLAN, LAGUNA</p></h2><br>
+</center>
+</div>
+<div style="margin-top: 1%">
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width-device-width,initial-scale=1.0, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap-4.3.1-dist/css/carousel.css" >
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css"></script>
+
+<title></title>
+<script src="sweetalert2.all.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<link rel="stylesheet" href="sweetalert2.min.css">
+</head>
+<body>
+<style>
+        html
+{ height: 100%;}
+
+body {
+    background-color: #f0f0f5;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+th {
+    background-color: #4d4d4d;
+    color: #ffffff;
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.btnlogout{
+  background-color: #ff9900;
+  color: white;
+  margin-top: 4px;
+}
+
+.btnlogout:hover{
+  background-color: white;
+  color: #ff9900;
+}
+
+a.link:active {
+color:red;
+  font-weight:bold;
+}
+
+li a:hover{
+  color:#4d4d4d;
+  font-weight:bold;
+}
+
+.btn-link{
+  position: absolute;
+  top: 3px;
+  right: 25px;
+  font-size: 23px;
+}
+
+.imgright{
+  position: absolute;
+  top: 5px;
+  right: 120px;
+  width: 40px;
+  height: 40px;
+}
+
+
+
+.link{
+  color:#ffffff;
+  text-decoration: none;
+  font-size:17px;
+}
+
+.nav-item{
+  float:left;
+  display:inline;
+  padding: 0 10px 0 10px;
+}
+
+ul{
+  margin:0;
+  padding:0;
+}
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 11px 13px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: #f2f2f2;
+  color:#4d4d4d;
+  font-weight:bold;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 170px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.navbar a:hover {
+  background-color: #333333;
+  display: block;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+</style>
+<div class="base sticky" style="margin-top: -1%">
+<!-- Navigation -->
+    <nav class="navbar navbar-expand-sm" style="background-color: #333333;">
+    <a href="/home" style="text-decoration: none;">
+    </a>
+    <!--<h5 style="color: #ff9900; font-family: 'Courier New', monospace;"> Inventory<br>
+    Management</h5>-->
+
+
+<!--Navlinks-->
+    <ul class="nav nav-pills">
+    <li class = nav-item>
+          <a class="nav-link link" href="/home">Home</a>
+    </li>
+        <li class = nav-item>
+          <a class="nav-link link" href="/about">About</a>
+    </li>
+    <li class = nav-item>
+      <a class="nav-link link" href="/news">News</a>
+    </li>
+        <li class = nav-item>
+      <a class="nav-link link" href="/agriculturist">OMA Personnel</a>
+    </li>
+        <li class="nav-item dropdown">
+      <a class="nav-link link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Farmers</a>
+        <div class="dropdown-content">
+
+          <a href="/farmers">Registered Farmers Organization</a>
+                      <a href="#">Registered Farmers </a>
+        </div>
+    </li>
+            <li class="nav-item dropdown">
+      <a class="nav-link link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Agricultural Statistics</a>
+        <div class="dropdown-content">
+
+          <a href="/pricemonitoring">Agricultural Product Price Monitoring</a>
+                      <a href="/landarea">Agricultural Land Area</a>
+
+
+
+
+
+
+
+
+        </div>
+    </li>
+          <li class="nav-item dropdown">
+      <a class="nav-link link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Downloadable Reading Materials</a>
+        <div class="dropdown-content">
+          <a href="/organic-agriculture">Organic Agriculture</a>
+          <a href="/avian-influenza">Avian Influenza</a>
+            <a href="/hog-production">Hog Production</a>
+            <a href="/palay">Gabay sa Makabagong Pagpapalay</a>
+            <a href="/urbangardening">Urban Gardening</a>
+            <a href="/pdf5">Fish Amino Acid</a>
+            <a href="/pdf6">Pagbabago sa Klima</a>
+            <a href="/pdf7">Oyster Mushroom Production Guide</a>
+            <a href="/pdf8">El Niño at La Niña</a>
+            <a href="/pdf9">Likas na Kaaway ng Corn Borer</a>
+            <a href="/pdf10">African-Night-Crawler</a>
+            <a href="/pdf11">Pesteng Insekto at Sakit Labanan</a>
+            <a href="/pdf12">Antimicrobial Resistance</a>
+            <a href="/pdf13">Foot and Mouth Decease</a>
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </li>
+
+  </ul>
+
+<!--logout-->
+
+
+</nav>
+
+        
+    </div>
+    <style>
+    ::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar
+{
+    width: 10px;
+    background-color: grey;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb
+{   border-radius: 5px;
+    background-color: lightgray;
+    border: 2px solid lightgray;
+}
+body{
+background-image: url(/static/bg3.jpg);
+    background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.table-container thead tr{
+    background-color: #42adf5;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+.table-container {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+.table-container {
+    margin-top: 2%;
+    background-color: white;
+    font-size: 1.2vw;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    backgroud-color: white;
+    padding: 20px 20px 10px 20px;
+}
+.table-container:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.scrollit {
+    overflow:scroll;
+    height:100px;
+}
+.table-container {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.table-container:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+td, th {
+
+        text-align: left;
+        padding: 6px;
+        font-size: 1.2vw;
+
+    }
+
+.container {
+  position: relative;
+  text-align: center;
+}
+
+
+.header {
+  padding: 10px 16px;
+  background: white;
+  color: black;
+}
+
+.content {
+  padding: 16px;
+}
+</style>
+<div class="container">
+<!--flash-->
+    
+</div>
+    <center>
+    <h1>Registered Farmers Organization</h1>
+</center>
+    <div style="margin-left:3%; margin-right:3%; width: 94%" class ="table-container" id="table-container">
+<table id="example" style="width:103%">
+
+ <thead>
+
+  <tr>
+    <th>Name of FA/IA</th>
+    <th>Barangay</th>
+    <th>Registration</th>
+          <th>Reg No.</th>
+
+          <th>Date Registered</th>
+          <th>President/Chairman</th>
+          <th>Contact No.</th>
+                <th>No. of Members</th>
+
+
+  </tr>
+ </thead>
+    <tbody>
+    <div></div>
+  <tr>
+<td>Barangay Silangan <br>Lazaan Upland <br>Vegetable Farmers<br>Asscociation (BSLUVFA)</td>
+<td>Silangan Lazaan</td>
+      <td>DOLE</td>
+      <td>
+      RO4A-LPO-0116-WA-001
+  </td>
+      <TD> 1/7/2016</TD>
+      <td>Berande Trillana</td>
+      <td>09752619085</td>
+            <td>45</td>
+
+  </tr>
+     <tr>
+<td>San Francisco Farmers<br> Association (SFFA)</td>
+<td>San Francisco</td>
+      <td>DOLE</td>
+      <td>
+      RO400-LPO0514-WO-042
+  </td>
+      <TD> 5/26/2014</TD>
+      <td>Peter U. Brosas</td>
+      <td>09293993445</td>
+            <td>30</td>
+
+  </tr>
+    <tr>
+<td>Talahib Multi-purpose<br> Cooperative</td>
+<td>Talahib</td>
+      <td>CDA</td>
+      <td>
+      CIN-0103040295
+  </td>
+      <TD> 1/25/2010</TD>
+      <td>Leveny A. Sotomango</td>
+      <td>09260267514</td>
+            <td>30</td>
+
+  </tr>
+      <tr>
+<td>Buklurang Magsasaka ng<br> Palayan Irrigators <br>Association INC</td>
+<td>Palayan</td>
+      <td>SEC</td>
+      <td>
+      CN202004381
+  </td>
+      <TD> 6/15/2020</TD>
+      <td>Carlos U. Dorado</td>
+      <td>09975300488</td>
+            <td>100</td>
+
+  </tr>
+     <tr>
+<td>Cacao Farmers <br>Association OG Nagcarlan </td>
+<td>Sabang</td>
+      <td>DOLE</td>
+      <td>
+  </td>
+      <TD> </TD>
+      <td>Absalon Levi C. Solpico</td>
+      <td>09338250286</td>
+            <td>600</td>
+
+  </tr>
+    <tr>
+<td>Gintong Butil ng Wakat<br> Irrigators Association </td>
+<td>wakat</td>
+      <td>SEC</td>
+      <td>CN200917880
+  </td>
+      <TD>11/16/2009</TD>
+      <td>Bernardo A. Medina</td>
+      <td>09214141383</td>
+            <td>100</td>
+
+  </tr>
+    <tr>
+<td> Banago-San francisco<br> Rice Farmers Irrigators <br>Association INC.</td>
+<td>Banago</td>
+      <td>SEC</td>
+      <td>CN201214129
+  </td>
+      <TD>7/30/2012</TD>
+      <td>Olimpio R. Sombilla</td>
+      <td>09072001374</td>
+            <td>23</td>
+
+  </tr>
+    <tr>
+<td> Manaol Nagcarlan <br> Irrigators Association INC. </td>
+<td>Manaol</td>
+      <td>SEC</td>
+      <td>CN200914865
+  </td>
+      <TD>9/25/2009</TD>
+      <td>Roel A. Basa</td>
+      <td>09199045736</td>
+            <td>120</td>
+
+  </tr>
+    <tr>
+<td> Lawagin Multi-purpose <br> Cooperative, INC </td>
+<td>Lawagin</td>
+      <td>CDA</td>
+      <td>CIN-01013040170
+  </td>
+      <TD>1/07/2010</TD>
+      <td>Benedicta S. Angeles</td>
+      <td>09292018262</td>
+            <td>127</td>
+
+  </tr>
+    <tr>
+<td> Bukal Upland Vegetable <br> Farmers Association </td>
+<td>Bukal</td>
+      <td>DOLE</td>
+      <td>
+  </td>
+      <TD></TD>
+      <td>Reynaldo U. Comendador</td>
+      <td>09756819006</td>
+            <td>35</td>
+
+  </tr>
+     <tr>
+<td> Barangay Abo Vegetable <br> Farmers Association </td>
+<td>ABO</td>
+      <td>DOLE</td>
+      <td>RO400 LPO-1213-WA-033
+  </td>
+      <TD>12/9/2013</TD>
+      <td>Irene M, Royo</td>
+      <td>09066237713</td>
+            <td>35</td>
+
+  </tr>
+    <tr>
+<td> Taytay Farmers Swisa </td>
+<td>Taytay</td>
+      <td>DOLE</td>
+      <td>RO4A-LPO-0715-WA -013
+  </td>
+      <TD>7/29/2015</TD>
+      <td>Efren S. Anonuevo</td>
+      <td>09268518127</td>
+            <td>54</td>
+
+  </tr>
+     <tr>
+<td> Samahang Magsasaka <br>ng Barangay Banilad </td>
+<td>Banilad</td>
+      <td>DOLE</td>
+      <td>RO400 LPO-1213-WA-034
+  </td>
+      <TD>7/29/2015</TD>
+      <td>Godofredo Dereza</td>
+      <td>09128052798</td>         <td>55</td>
+
+  </tr>
+     <tr>
+<td> Labangan Nagcalbanng <br> Farmers Association </td>
+<td>Labangan</td>
+      <td>DOLE</td>
+      <td>
+  </td>
+      <TD></TD>
+      <td>Cesar Urriza</td>
+      <td>09463506493</td>
+            <td>42</td>
+  </tr>
+       <tr>
+<td> Silangan Napapatid <br> Farmers Association </td>
+<td>Labangan</td>
+      <td>DOLE</td>
+      <td>
+  </td>
+      <TD></TD>
+      <td>Luis C. Cabatic</td>
+      <td>09502697806</td>
+            <td>40</td>
+  </tr>
+     <tr>
+<td> Barangay Malinao <br>Farmers Association </td>
+<td>Malinao</td>
+      <td>DOLE</td>
+      <td>
+  </td>
+      <TD></TD>
+      <td>Liza Bueno</td>
+      <td>09368135069</td>
+            <td>40</td>
+  </tr>
+     <tr>
+<td> Barangay  Alumbrado <br>Farmers Association </td>
+<td>Alumbrado</td>
+      <td>DOLE</td>
+      <td>
+  </td>
+      <TD></TD>
+      <td>Gerry U. Isleta</td>
+      <td>09175017363</td>
+            <td>25</td>
+  </tr>
+    <tr>
+<td> Yambo Lake Livelihood <br>Farmers Association </td>
+<td>Sulsugun</td>
+      <td>SEC</td>
+      <td>
+          CN201709399
+  </td>
+      <TD>3/16/2017</TD>
+      <td>Emerson P. Montalban</td>
+      <td>09452736611</td>
+            <td>25</td>
+  </tr>
+    <tr>
+<td> Dimayuga ARBs Association </td>
+<td>Silangan kabubuhayan
+</td>
+      <td>DOLE</td>
+      <td>
+          0912-052LAG
+  </td>
+      <TD>12/23/2009</TD>
+      <td>Rene Lualhati Surban</td>
+      <td>09532394812</td>
+            <td>25</td>
+  </tr>
+     <tr>
+<td> Samahang Magsasaka <br> ng Bukal </td>
+<td>Bukal
+</td>
+      <td>DOLE</td>
+      <td>
+  </td>
+      <TD></TD>
+      <td>Diomedes Monreal</td>
+      <td>09167146324</td>
+            <td>38</td>
+  </tr>
+     <tr>
+<td> Landing Point Farmers<br> Association </td>
+<td>San Francisco
+</td>
+      <td>DOLE</td>
+      <td>
+  </td>
+      <TD></TD>
+      <td>Alvin Monreal</td>
+      <td>09515805695</td>
+            <td>62</td>
+  </tr>
+    </tbody>
+
+</table>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap.min.js"></script>
+<script src="https://cdn.datatables.net/fixedheader/3.1.7/js/dataTables.fixedHeader.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.6/js/responsive.bootstrap.min.js  "></script>
+
+
+<script>
+       $(document).ready(function() {
+    $('#example').DataTable();
+} );
+    </script>
+    </div>
+<br>
+
+        
+</div>
+</body>
+</html>

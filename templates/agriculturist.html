@@ -1,0 +1,508 @@
+<html lang="en">
+<head>
+  <title>Nagcarlan Municipal Agriculture Office</title>
+    <link rel = "icon" href ="/static/agri.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/fixedheader/3.1.7/css/fixedHeader.bootstrap.min.css">
+    <link rel="stylesheet" href=" https://cdn.datatables.net/responsive/2.2.6/css/responsive.bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script><script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+
+
+<body>
+
+
+<div class="header" id="myHeader" style="margin-top: -2%; margin-bottom: 1%; background-image: linear-gradient(#6AA121, #BCE954, #387C44);">
+<center> <h2 style="margin-left: -3%; font-weight: bold" > <img src="/static/nagcarlan.png" class="icon" width="-10" height="-10" style="height: 100px; width: 200px"> MUNICIPAL AGRICULTURE OFFICE<img src="/static/agri.png" class="icon" width="10" height="10" style="height: 110px; width: 110px; margin-left: 4%"><p style="margin-top: -30px; margin-bottom: -2%">NAGCARLAN, LAGUNA</p></h2><br>
+</center>
+</div>
+<div style="margin-top: 1%">
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width-device-width,initial-scale=1.0, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap-4.3.1-dist/css/carousel.css" >
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css"></script>
+
+<title></title>
+<script src="sweetalert2.all.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<link rel="stylesheet" href="sweetalert2.min.css">
+</head>
+<body>
+<style>
+    html
+{ height: 100%;}
+
+body {
+  background-color: #f0f0f5;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+th {
+  background-color: #4d4d4d;
+  color: #ffffff;
+}
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.btnlogout{
+  background-color: #ff9900;
+  color: white;
+  margin-top: 4px;
+}
+
+.btnlogout:hover{
+  background-color: white;
+  color: #ff9900;
+}
+
+a.link:active {
+color:red;
+  font-weight:bold;
+}
+
+li a:hover{
+  color:#4d4d4d;
+  font-weight:bold;
+}
+
+.btn-link{
+  position: absolute;
+  top: 3px;
+  right: 25px;
+  font-size: 23px;
+}
+
+.imgright{
+  position: absolute;
+  top: 5px;
+  right: 120px;
+  width: 40px;
+  height: 40px;
+}
+
+
+
+.link{
+  color:#ffffff;
+  text-decoration: none;
+  font-size:17px;
+}
+
+.nav-item{
+  float:left;
+  display:inline;
+  padding: 0 10px 0 10px;
+}
+
+ul{
+  margin:0;
+  padding:0;
+}
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 11px 13px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: #f2f2f2;
+  color:#4d4d4d;
+  font-weight:bold;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 170px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.navbar a:hover {
+  background-color: #333333;
+  display: block;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+</style>
+<div class="base sticky" style="margin-top: -1%">
+<!-- Navigation -->
+  <nav class="navbar navbar-expand-sm" style="background-color: #333333;">
+    <a href="/home" style="text-decoration: none;">
+    </a>
+    <!--<h5 style="color: #ff9900; font-family: 'Courier New', monospace;"> Inventory<br>
+    Management</h5>-->
+
+
+<!--Navlinks-->
+  <ul class="nav nav-pills">
+    <li class = nav-item>
+      <a class="nav-link link" href="/home">Home</a>
+    </li>
+        <li class = nav-item>
+      <a class="nav-link link" href="/about">About</a>
+    </li>
+    <li class = nav-item>
+      <a class="nav-link link" href="/news">News</a>
+    </li>
+        <li class = nav-item>
+      <a class="nav-link link" href="/agriculturist">OMA Personnel</a>
+    </li>
+        <li class="nav-item dropdown">
+      <a class="nav-link link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Farmers</a>
+        <div class="dropdown-content">
+
+          <a href="/farmers">Registered Farmers Organization</a>
+                      <a href="#">Registered Farmers </a>
+        </div>
+    </li>
+            <li class="nav-item dropdown">
+      <a class="nav-link link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Agricultural Statistics</a>
+        <div class="dropdown-content">
+
+          <a href="/pricemonitoring">Agricultural Product Price Monitoring</a>
+                      <a href="/landarea">Agricultural Land Area</a>
+
+
+
+
+
+
+
+
+        </div>
+    </li>
+          <li class="nav-item dropdown">
+      <a class="nav-link link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Downloadable Reading Materials</a>
+        <div class="dropdown-content">
+          <a href="/organic-agriculture">Organic Agriculture</a>
+          <a href="/avian-influenza">Avian Influenza</a>
+            <a href="/hog-production">Hog Production</a>
+            <a href="/palay">Gabay sa Makabagong Pagpapalay</a>
+            <a href="/urbangardening">Urban Gardening</a>
+            <a href="/pdf5">Fish Amino Acid</a>
+            <a href="/pdf6">Pagbabago sa Klima</a>
+            <a href="/pdf7">Oyster Mushroom Production Guide</a>
+            <a href="/pdf8">El Niño at La Niña</a>
+            <a href="/pdf9">Likas na Kaaway ng Corn Borer</a>
+            <a href="/pdf10">African-Night-Crawler</a>
+            <a href="/pdf11">Pesteng Insekto at Sakit Labanan</a>
+            <a href="/pdf12">Antimicrobial Resistance</a>
+            <a href="/pdf13">Foot and Mouth Decease</a>
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </li>
+
+  </ul>
+
+<!--logout-->
+
+
+</nav>
+
+        
+    </div>
+    <style>
+    ::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #F5F5F5;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar
+{
+  width: 10px;
+  background-color: grey;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb
+{   border-radius: 5px;
+  background-color: lightgray;
+  border: 2px solid lightgray;
+}
+body{
+background-image: url(/static/bg3.jpg);
+    background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.table-container thead tr{
+    background-color: #42adf5;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+.table-container {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+.table-container {
+    margin-top: 2%;
+    background-color: white;
+    font-size: 1.2vw;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    backgroud-color: white;
+    padding: 20px 20px 10px 20px;
+}
+.table-container:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.scrollit {
+    overflow:scroll;
+    height:100px;
+}
+.table-container {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.table-container:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+td, th {
+
+        text-align: left;
+        padding: 6px;
+        font-size: 1.2vw;
+
+    }
+
+.container {
+  position: relative;
+  text-align: center;
+}
+.centered1 {
+  position: absolute;
+
+  top: 200px;
+  left: 143px;
+  font-size: 20px
+}
+.centered2 {
+   position: absolute;
+  top: 200px;
+  right: 130px;
+   font-size: 20px
+}
+
+.top-container {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+}
+
+.header {
+  padding: 10px 16px;
+  background: white;
+  color: black;
+}
+
+.content {
+  padding: 16px;
+}
+</style>
+<div class="container">
+<!--flash-->
+  
+</div>
+    <center>
+    <h1>OMA Personnels</h1>
+</center>
+
+    <div style="margin-left:3%; margin-right:3%; width: 94%" class ="table-container" id="table-container">
+<table id="example" style="width:106%">
+
+ <thead>
+
+  <tr>
+    <th>Name</th>
+    <th>Designation</th>
+    <th>Email Address</th>
+          <th>Contact No.</th>
+
+          <th>Assigned Baranggay</th>
+
+  </tr>
+ </thead>
+    <tbody>
+  <tr>
+    <td><img src="/static/sirAlvin.jpg" class="icon" width="-10" height="-10" style="height: 100px; width: 100px"> Alvin C. Ardeza</td>
+    <td>Municipal Agriculturist</td>
+      <td>a1chum@yahoo.com.ph<br>a1chums@gmail.com</td>
+    <td>0926-666-3444<br>0908-890-7701</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><img src="/static/sirLucas.png" class="icon" width="-10" height="-10" style="height: 100px; width: 100px"> Patricio Abraham R. Lucas</td>
+    <td>Agricultural Technologist</td>
+      <td>patlucas@gmail.com</td>
+    <td>0915-839-3256</td>
+    <td>Manaol<br>Maravilla<br>Taytay<br>Banago<br>malaya<br>Banca-Banca<br>Sibulan<br>Kan. Kabubuhayan</td>
+  </tr>
+<tr>
+    <td><img src="/static/sirNestor.jpg" class="icon" width="-10" height="-10" style="height: 100px; width: 100px"> Nestor M. Ramos Jr.</td>
+    <td>Agricultural Technologist</td>
+      <td>rotsen_bong@yahoo.com</td>
+    <td>0908-176-6705</td>
+    <td>Wakat<br>Alumbrado<br>Sulsugin<br>Talahib<br>Banilad</td>
+  </tr>
+    <tr>
+    <td><img src="/static/mamAmelita.jpg" class="icon" width="-10" height="-10" style="height: 100px; width: 100px"> Amelita D. Romanes</td>
+    <td>Agricultural Technologist</td>
+      <td>adromanes23@yahoo.com</td>
+    <td>0906-261-3460</td>
+    <td>Wakat<br>Buenavista<br>Lawaguin<br>Balayong<br>Bunga<br>Bayaquitos<br>Tipacan<br>Palayan<br>Alibungbungan<br>Sabang</td>
+  </tr>
+    <tr>
+    <td><img src="/static/maamMaricel.jpg" class="icon" width="-10" height="-10" style="height: 100px; width: 100px"> Maricel L. Gamara</td>
+    <td>Agricultural Technologist</td>
+      <td>maricel.gamara@yahoo.com</td>
+    <td>0906-261-3460</td>
+    <td>Abo<br>Bukal<br>San Francisco<br>Silangan Lazaan<br> Kanluran Lazaan<br> Malina<br>Sinipian<br>Balimbing<br>Balinacon<br>Oples<br>Talangan<br>Sta. Lucia<br>Calumpang</td>
+  </tr>
+      <tr>
+    <td><img src="/static/maamJom.jpg" class="icon" width="-10" height="-10" style="height: 100px; width: 100px"> Jomellyn L. Montegrande</td>
+    <td>Agricultural Technologist</td>
+      <td>joy0372@yahoo.com</td>
+    <td>0917-544-3868</td>
+    <td>Labangan<br>Ngcalbang<br>Banca-Banca<br>Sil. Ilaya<br> Sil. Napapatid<br> Palina<br>Bambang<br>Yukos<br>Balinacon<br>Oples<br>Mait<br>Poblacion 1, 2 ,3</td>
+  </tr>
+      <tr>
+    <td><img src="/static/sirJoel.jpg" class="icon" width="-10" height="-10" style="height: 100px; width: 100px"> Ancleto Joel L. Coronado</td>
+    <td>Livestock Technologist</td>
+      <td>coronadoancletajoel@yahoo.com</td>
+    <td>0961-067-7286</td>
+    <td>Lagulo<br>Bangkuro<br>Buhanginan<br>Cabuyew</td>
+  </tr>
+    <tr>
+    <td><img src="/static/maamLourice.jpg" class="icon" width="-10" height="-10" style="height: 100px; width: 100px"> Lourize C. Marasigan</td>
+    <td>Facilitator</td>
+      <td>louricemarasigan0518@gmail.com</td>
+    <td>0946-446-4685</td>
+    <td>
+  </tr>
+       <tr>
+    <td><img src="/static/maamAngie.jpg" class="icon" width="-10" height="-10" style="height: 100px; width: 100px"> Angienette B. Consebido</td>
+    <td> Agri Staff</td>
+      <td>angienettbituin8@gmail.com</td>
+    <td>0905-540-7488</td>
+           <td></td>
+  </tr>
+     <tr>
+    <td><img src="/static/maamladylene.jpg" class="icon" width="-10" height="-10" style="height: 100px; width: 100px"> Ladylene B. Doria</td>
+    <td>Agri Staff</td>
+      <td>ladylenebuenodoria@gmail.com</td>
+    <td>0915-733-0646</td>
+           <td></td>
+  </tr>
+    <tr>
+    <td><img src="/static/sirReniel.jpg" class="icon" width="-10" height="-10" style="height: 100px; width: 100px"> Reniel Joseph C. Bituin</td>
+    <td>Agri Staff</td>
+      <td>Bituin.reniel16@gmail.com</td>
+    <td>0975-436-6696</td>
+           <td></td>
+  </tr>
+    <tr>
+    <td><img src="/static/sirRicky.jpg" class="icon" width="-10" height="-10" style="height: 100px; width: 100px"> Ricky C. Calabia</td>
+    <td> Agri Staff</td>
+      <td>rickycalabia@gmail.com</td>
+    <td>0977-488-0544</td>
+           <td></td>
+  </tr>
+    <tr>
+    <td><img src="/static/sirJohn.jpg" class="icon" width="-10" height="-10" style="height: 100px; width: 100px"> John Carlo S. Orido</td>
+    <td>Agri Staff</td>
+      <td>j.orido@gmail.com</td>
+    <td>0955-921-6535</td>
+           <td></td>
+  </tr>
+    </tbody>
+
+</table>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap.min.js"></script>
+<script src="https://cdn.datatables.net/fixedheader/3.1.7/js/dataTables.fixedHeader.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.6/js/responsive.bootstrap.min.js  "></script>
+
+
+<script>
+       $(document).ready(function() {
+    $('#example').DataTable();
+} );
+    </script>
+    </div>
+    <br>
+
+      
+</div>
+</body>
+</html>
